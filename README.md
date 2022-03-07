@@ -1,13 +1,25 @@
 # Telegraph
 
-[![Elixir CI](https://github.com/etroynov/telegraph/actions/workflows/elixir.yml/badge.svg)](https://github.com/etroynov/telegraph/actions/workflows/elixir.yml)
+
+
+<div align="center">
+
+Modern Telegram Bot API framework based on Nadia project ([document](https://hexdocs.pm/telegraph/), [Telegram Bot API](https://core.telegram.org/bots/api))
+
 [![Module Version](https://img.shields.io/hexpm/v/telegraph.svg)](https://hex.pm/packages/telegraph)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/telegraph/)
 [![Total Download](https://img.shields.io/hexpm/dt/telegraph.svg)](https://hex.pm/packages/telegraph)
 [![License](https://img.shields.io/hexpm/l/telegraph.svg)](https://github.com/etroynov/telegraph/blob/master/LICENSE)
 [![Last Updated](https://img.shields.io/github/last-commit/etroynov/telegraph.svg)](https://github.com/etroynov/telegraph/commits/master)
 
-Modern Telegram Bot API framework based on Nadia project ([document](https://hexdocs.pm/telegraph/))
+[![Bot API](https://img.shields.io/badge/Bot%20API-v.5.5-00aced.svg?style=flat-square&logo=telegram)](https://core.telegram.org/bots/api)
+[![Elixir CI](https://github.com/etroynov/telegraph/actions/workflows/elixir.yml/badge.svg)](https://github.com/etroynov/telegraph/actions/workflows/elixir.yml)
+
+
+[![https://telegram.me/ntbasupport](https://img.shields.io/badge/💬%20Telegram-Group-blue.svg?style=flat-square)](https://t.me/+bYp1NseULwliNmVi)
+[![https://telegram.me/utroynov](https://img.shields.io/badge/💬%20Telegram-Evgenii_Troinov-blue.svg?style=flat-square)](https://telegram.me/utroynov)
+
+</div>
 
 ## Installation
 
