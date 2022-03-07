@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/hexpm/l/telegraph.svg)](https://github.com/etroynov/telegraph/blob/master/LICENSE)
 [![Last Updated](https://img.shields.io/github/last-commit/etroynov/telegraph.svg)](https://github.com/etroynov/telegraph/commits/master)
 
-Telegram Bot API Wrapper written in Elixir ([document](https://hexdocs.pm/telegraph/))
+Modern Telegram Bot API framework based on Nadia project ([document](https://hexdocs.pm/telegraph/))
 
 ## Installation
 
