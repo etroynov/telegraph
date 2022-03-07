@@ -14,8 +14,6 @@ Modern Telegram Bot API framework based on Nadia project ([document](https://hex
 
 [![Bot API](https://img.shields.io/badge/Bot%20API-v.5.5-00aced.svg?style=flat-square&logo=telegram)](https://core.telegram.org/bots/api)
 [![Elixir CI](https://github.com/etroynov/telegraph/actions/workflows/elixir.yml/badge.svg)](https://github.com/etroynov/telegraph/actions/workflows/elixir.yml)
-
-
 [![https://telegram.me/ntbasupport](https://img.shields.io/badge/💬%20Telegram-Group-blue.svg?style=flat-square)](https://t.me/+bYp1NseULwliNmVi)
 [![https://telegram.me/utroynov](https://img.shields.io/badge/💬%20Telegram-Evgenii_Troinov-blue.svg?style=flat-square)](https://telegram.me/utroynov)
 
@@ -28,7 +26,7 @@ Add `:telegraph` to your `mix.exs` dependencies:
 ```elixir
 def deps do
   [
-    {:telegraph, "~> 0.7.0"}
+    {:telegraph, "~> 0.8.1"}
   ]
 end
 ```
