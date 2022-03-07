@@ -932,7 +932,7 @@ defmodule Telegraph do
   * `reply_to_message_id` - If the message is a reply, ID of the original message
   * `allow_sending_without_reply` - Pass True, if the message should be sent even if the
   specified replied-to message is not found
-  * `reply_markup` - A JSON-serialized object for an inline keyboard - `Nadia.Model.InlineKeyboardMarkup`
+  * `reply_markup` - A JSON-serialized object for an inline keyboard - `Telegraph.Model.InlineKeyboardMarkup`
   """
   @spec send_invoice(integer | binary, binary, binary, binary, binary, binary, binary, [LabeledPrice.t()], [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
@@ -960,7 +960,7 @@ defmodule Telegraph do
   * `ok` - Specify True if delivery to the specified address is possible and False if there are any
   problems (for example, if delivery to the specified address is not possible)
   Options:
-  * `shipping_address` - Required if ok is True. A list of `Nadia.Model.ShippingOption`
+  * `shipping_address` - Required if ok is True. A list of `Telegraph.Model.ShippingOption`
   * `error_message` - Required if ok is False. Error message in human readable form that explains
   why it is impossible to complete the order (e.g. "Sorry, delivery to your desired address is
   unavailable'). Telegram will display this message to the user.

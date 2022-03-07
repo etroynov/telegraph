@@ -2,7 +2,7 @@ defmodule Telegraph.Mixfile do
   use Mix.Project
 
   @source_url "https://github.com/etroynov/telegraph"
-  @version "0.8.0"
+  @version "0.8.1"
 
   def project do
     [

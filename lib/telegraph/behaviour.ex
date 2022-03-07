@@ -54,7 +54,7 @@ defmodule Telegraph.Behaviour do
               binary,
               binary,
               binary,
-              [Nadia.Model.LabeledPrice.t()],
+              [Telegraph.Model.LabeledPrice.t()],
               [{atom, any}]
             ) :: {:ok, Message.t()} | {:error, Error.t()}
   @callback answer_shipping_query(integer | binary, boolean, [{atom, any}]) ::
