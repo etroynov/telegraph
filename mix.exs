@@ -23,8 +23,8 @@ defmodule Telegraph.Mixfile do
       {:httpoison, "~> 1.8"},
       {:jason, "~> 1.3"},
       {:exvcr, "~> 0.13", only: [:dev, :test]},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:earmark, "~> 1.4", only: :docs},
-      {:ex_doc, ">= 0.0.0", only: :docs, runtime: false},
       {:inch_ex, "~> 2.0.0", only: :docs}
     ]
   end

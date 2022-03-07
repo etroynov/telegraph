@@ -15,7 +15,7 @@ defmodule Telegraph.Config do
   def file_base_url, do: config_or_env(:file_base_url) || @default_file_base_url
 
   defp config_or_env(key) do
-    case Application.fetch_env(:Telegraph, key) do
+    case Application.fetch_env(:telegraph, key) do
       {:ok, {:system, var}} ->
         System.get_env(var)
 
