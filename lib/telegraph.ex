@@ -802,6 +802,7 @@ defmodule Telegraph do
   * `mask_position` - A `Telegraph.Model.MaskPosition` object for position where the mask
   should be placed on faces
   """
+  @doc since: "0.1.0"
   @spec create_new_sticker_set(integer, binary, binary, binary, binary, [{atom, any}]) ::
           :ok | {:error, Error.t()}
   def create_new_sticker_set(user_id, name, title, png_sticker, emojis, options \\ []) do
@@ -830,6 +831,7 @@ defmodule Telegraph do
   * `mask_position` - A `Telegraph.Model.MaskPosition` object for position where the mask
   should be placed on faces
   """
+  @doc since: "0.1.0"
   @spec add_sticker_to_set(integer, binary, binary, binary, [{atom, any}]) ::
           :ok | {:error, Error.t()}
   def add_sticker_to_set(user_id, name, png_sticker, emojis, options \\ []) do
@@ -848,6 +850,7 @@ defmodule Telegraph do
   * `sticker` - File identifier of the sticker
   * `position` - New sticker position in the set, zero-based
   """
+  @doc since: "0.1.0"
   @spec set_sticker_position_in_set(binary, integer) :: :ok | {:error, Error.t()}
   def set_sticker_position_in_set(sticker, position) do
     request("setStickerPositionInSet", sticker: sticker, position: position)
@@ -859,6 +862,7 @@ defmodule Telegraph do
   Args:
   * `sticker` - File identifier of the sticker
   """
+  @doc since: "0.1.0"
   @spec delete_sticker_from_set(binary) :: :ok | {:error, Error.t()}
   def delete_sticker_from_set(sticker) do
     request("deleteStickerFromSet", sticker: sticker)
@@ -878,6 +882,7 @@ defmodule Telegraph do
   * `disable_notification` - Pass True, if it is not necessary to send a notification to all
   chat members about the new pinned message. Notifications are always disabled in channels.
   """
+  @doc since: "0.1.0"
   @spec pin_chat_message(integer | binary, integer | binary, [{atom, any}]) ::
           :ok | {:error, Error.t()}
   def pin_chat_message(chat_id, message_id, options \\ []) do
@@ -893,6 +898,7 @@ defmodule Telegraph do
   * `chat_id` - Unique identifier for the target chat or username of the target channel
   (in the format @channelusername)
   """
+  @doc since: "0.1.0"
   @spec unpin_chat_message(integer | binary) :: :ok | {:error, Error.t()}
   def unpin_chat_message(chat_id) do
     request("unpinChatMessage", chat_id: chat_id)
@@ -934,6 +940,7 @@ defmodule Telegraph do
   specified replied-to message is not found
   * `reply_markup` - A JSON-serialized object for an inline keyboard - `Telegraph.Model.InlineKeyboardMarkup`
   """
+  @doc since: "0.8.0"
   @spec send_invoice(integer | binary, binary, binary, binary, binary, binary, binary, [LabeledPrice.t()], [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def send_invoice(chat_id, title, description, payload, provider_token, start_parameter, currency, prices, options \\ []) do
@@ -965,6 +972,7 @@ defmodule Telegraph do
   why it is impossible to complete the order (e.g. "Sorry, delivery to your desired address is
   unavailable'). Telegram will display this message to the user.
   """
+  @doc since: "0.8.0"
   @spec answer_shipping_query(integer | binary, boolean, [{atom, any}]) :: :ok | {:error, Error.t()}
   def answer_shipping_query(shipping_query_id, ok, options \\ []) do
     request("answerShippingQuery", [shipping_query_id: shipping_query_id, ok: ok] ++ options)
@@ -985,6 +993,7 @@ defmodule Telegraph do
   our amazing black T-shirts while you were busy filling out your payment details. Please choose
   a different color or garment!"). Telegram will display this message to the user.
   """
+  @doc since: "0.8.0"
   @spec answer_pre_checkout_query(integer | binary, boolean, [{atom, any}]) :: :ok | {:error, Error.t()}
   def answer_pre_checkout_query(pre_checkout_query_id, ok, options \\ []) do
     request("answerPreCheckoutQuery",
