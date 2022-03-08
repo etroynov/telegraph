@@ -26,7 +26,7 @@ Add `:telegraph` to your `mix.exs` dependencies:
 ```elixir
 def deps do
   [
-    {:telegraph, "~> 0.8.1"}
+    {:telegraph, "~> 0.8.2"}
   ]
 end
 ```
