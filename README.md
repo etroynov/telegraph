@@ -130,7 +130,7 @@ Refer to [Telegraph document](https://hexdocs.pm/telegraph/) and [Telegram Bot A
 
 ## Copyright and License
 
-Copyright (c) 2022 Evgenii Troinov
+Copyright (c) 2022 Evgenii Troinov, <br>
 Copyright (c) 2015 Yu Zhang
 
 This library licensed under the [MIT license](./LICENSE.md).
