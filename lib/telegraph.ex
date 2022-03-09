@@ -16,6 +16,7 @@ defmodule Telegraph do
   A simple method for testing your bot's auth token. Requires no parameters.
   Returns basic information about the bot in form of a User object.
   """
+  @doc since: "0.1.0"
   @spec get_me :: {:ok, User.t()} | {:error, Error.t()}
   def get_me, do: request("getMe")
 
@@ -39,6 +40,7 @@ defmodule Telegraph do
   force a reply from the user - `Telegraph.Model.ReplyKeyboardMarkup` or
   `Telegraph.Model.ReplyKeyboardRemove` or `Telegraph.Model.ForceReply`
   """
+  @doc since: "0.1.0"
   @spec send_message(integer | binary, binary, [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def send_message(chat_id, text, options \\ []) do
@@ -57,6 +59,7 @@ defmodule Telegraph do
   * `:disable_notification` - Sends the message silently or without notification
   * `message_id` - Unique message identifier
   """
+  @doc since: "0.1.0"
   @spec forward_message(integer | binary, integer | binary, integer) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def forward_message(chat_id, from_chat_id, message_id) do
@@ -87,6 +90,7 @@ defmodule Telegraph do
   force a reply from the user - `Telegraph.Model.ReplyKeyboardMarkup` or
   `Telegraph.Model.ReplyKeyboardRemove` or `Telegraph.Model.ForceReply`
   """
+  @doc since: "0.1.0"
   @spec send_photo(integer | binary, binary, [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def send_photo(chat_id, photo, options \\ []) do
@@ -123,6 +127,7 @@ defmodule Telegraph do
   force a reply from the user - `Telegraph.Model.ReplyKeyboardMarkup` or
   `Telegraph.Model.ReplyKeyboardRemove` or `Telegraph.Model.ForceReply`
   """
+  @doc since: "0.1.0"
   @spec send_audio(integer | binary, binary, [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def send_audio(chat_id, audio, options \\ []) do
@@ -149,6 +154,7 @@ defmodule Telegraph do
   force a reply from the user - `Telegraph.Model.ReplyKeyboardMarkup` or
   `Telegraph.Model.ReplyKeyboardRemove` or `Telegraph.Model.ForceReply`
   """
+  @doc since: "0.1.0"
   @spec send_document(integer | binary, binary, [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def send_document(chat_id, document, options \\ []) do
@@ -173,6 +179,7 @@ defmodule Telegraph do
   force a reply from the user - `Telegraph.Model.ReplyKeyboardMarkup` or
   `Telegraph.Model.ReplyKeyboardRemove` or `Telegraph.Model.ForceReply`
   """
+  @doc since: "0.1.0"
   @spec send_sticker(integer | binary, binary, [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def send_sticker(chat_id, sticker, options \\ []) do
@@ -202,6 +209,7 @@ defmodule Telegraph do
   force a reply from the user - `Telegraph.Model.ReplyKeyboardMarkup` or
   `Telegraph.Model.ReplyKeyboardRemove` or `Telegraph.Model.ForceReply`
   """
+  @doc since: "0.1.0"
   @spec send_video(integer | binary, binary, [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def send_video(chat_id, video, options \\ []) do
@@ -231,6 +239,7 @@ defmodule Telegraph do
   force a reply from the user - `Telegraph.Model.ReplyKeyboardMarkup` or
   `Telegraph.Model.ReplyKeyboardRemove` or `Telegraph.Model.ForceReply`
   """
+  @doc since: "0.1.0"
   @spec send_voice(integer | binary, binary, [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def send_voice(chat_id, voice, options \\ []) do
@@ -255,6 +264,7 @@ defmodule Telegraph do
   force a reply from the user - `Telegraph.Model.ReplyKeyboardMarkup` or
   `Telegraph.Model.ReplyKeyboardRemove` or `Telegraph.Model.ForceReply`
   """
+  @doc since: "0.1.0"
   @spec send_location(integer | binary, float, float, [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def send_location(chat_id, latitude, longitude, options \\ []) do
@@ -287,6 +297,7 @@ defmodule Telegraph do
   `Telegraph.Model.ReplyKeyboardMarkup` or `Telegraph.Model.ReplyKeyboardRemove` or
   `Telegraph.Model.ForceReply`
   """
+  @doc since: "0.1.0"
   @spec send_venue(integer | binary, float, float, binary, binary, [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def send_venue(chat_id, latitude, longitude, title, address, options \\ []) do
@@ -318,6 +329,7 @@ defmodule Telegraph do
   `Telegraph.Model.ReplyKeyboardMarkup` or `Telegraph.Model.ReplyKeyboardRemove` or
   `Telegraph.Model.ForceReply`
   """
+  @doc since: "0.1.0"
   @spec send_contact(integer | binary, binary, binary, [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def send_contact(chat_id, phone_number, first_name, options \\ []) do
@@ -344,6 +356,7 @@ defmodule Telegraph do
       * `upload_document` for general files
       * `find_location` for location data
   """
+  @doc since: "0.1.0"
   @spec send_chat_action(integer | binary, binary) :: :ok | {:error, Error.t()}
   def send_chat_action(chat_id, action) do
     request("sendChatAction", chat_id: chat_id, action: action)
@@ -375,6 +388,7 @@ defmodule Telegraph do
   * `:reply_markup` - Additional interface options. A JSON-serialized object for an inline keyboard,
   custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.
   """
+  @doc since: "0.1.0"
   @spec send_animation(integer | binary, binary, [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def send_animation(chat_id, animation, options \\ []) do
@@ -395,6 +409,7 @@ defmodule Telegraph do
   * `:limit` - Limits the number of photos to be retrieved. Values between 1—100 are
   accepted. Defaults to 100
   """
+  @doc since: "0.1.0"
   @spec get_user_profile_photos(integer, [{atom, any}]) ::
           {:ok, UserProfilePhotos.t()} | {:error, Error.t()}
   def get_user_profile_photos(user_id, options \\ []) do
@@ -419,6 +434,7 @@ defmodule Telegraph do
   * `:timeout` - Timeout in seconds for long polling. Defaults to 0, i.e. usual short
   polling
   """
+  @doc since: "0.1.0"
   @spec get_updates([{atom, any}]) :: {:ok, [Update.t()]} | {:error, Error.t()}
   def get_updates(options \\ []), do: request("getUpdates", options)
 
@@ -434,6 +450,7 @@ defmodule Telegraph do
   Options:
   * `:url` - HTTPS url to send updates to.
   """
+  @doc since: "0.1.0"
   @spec set_webhook([{atom, any}]) :: :ok | {:error, Error.t()}
   def set_webhook(options \\ []), do: request("setWebhook", options)
 
@@ -443,6 +460,7 @@ defmodule Telegraph do
 
   Requires no parameters.
   """
+  @doc since: "0.1.0"
   @spec delete_webhook() :: :ok | {:error, Error.t()}
   def delete_webhook(), do: request("deleteWebhook")
 
@@ -451,6 +469,7 @@ defmodule Telegraph do
   On success, returns a `Telegraph.Model.WebhookInfo.t()` object with webhook details.
   If the bot is using getUpdates, will return an object with the url field empty.
   """
+  @doc since: "0.1.0"
   @spec get_webhook_info() :: {:ok, WebhookInfo.t()} | {:error, Error.t()}
   def get_webhook_info(), do: request("getWebhookInfo")
 
@@ -466,6 +485,7 @@ defmodule Telegraph do
   Args:
   * `file_id` - File identifier to get info about
   """
+  @doc since: "0.1.0"
   @spec get_file(binary) :: {:ok, File.t()} | {:error, Error.t()}
   def get_file(file_id), do: request("getFile", file_id: file_id)
 
@@ -479,6 +499,7 @@ defmodule Telegraph do
       "https://api.telegram.org/file/bot#{Telegraph.Config.token()}/document/file_10"}
 
   """
+  @doc since: "0.1.0"
   @spec get_file_link(File.t()) :: {:ok, binary} | {:error, Error.t()}
   def get_file_link(file) do
     {:ok, build_file_url(file.file_path)}
@@ -499,6 +520,7 @@ defmodule Telegraph do
   (in the format @supergroupusername)
   * `user_id` - Unique identifier of the target user
   """
+  @doc since: "0.1.0"
   @spec kick_chat_member(integer | binary, integer) :: :ok | {:error, Error.t()}
   def kick_chat_member(chat_id, user_id) do
     request("kickChatMember", chat_id: chat_id, user_id: user_id)
@@ -512,6 +534,7 @@ defmodule Telegraph do
   * `chat_id` - Unique identifier for the target chat or username of the target supergroup or
   channel (in the format @supergroupusername)
   """
+  @doc since: "0.1.0"
   @spec leave_chat(integer | binary) :: :ok | {:error, Error.t()}
   def leave_chat(chat_id) do
     request("leaveChat", chat_id: chat_id)
@@ -527,6 +550,7 @@ defmodule Telegraph do
   (in the format @supergroupusername)
   * `user_id` - Unique identifier of the target user
   """
+  @doc since: "0.1.0"
   @spec unban_chat_member(integer | binary, integer) :: :ok | {:error, Error.t()}
   def unban_chat_member(chat_id, user_id) do
     request("unbanChatMember", chat_id: chat_id, user_id: user_id)
@@ -541,6 +565,7 @@ defmodule Telegraph do
   * `chat_id` - Unique identifier for the target chat or username of the target supergroup or
   channel (in the format @supergroupusername)
   """
+  @doc since: "0.1.0"
   @spec get_chat(integer | binary) :: {:ok, Chat.t()} | {:error, Error.t()}
   def get_chat(chat_id) do
     request("getChat", chat_id: chat_id)
@@ -556,6 +581,7 @@ defmodule Telegraph do
   * `chat_id` - Unique identifier for the target chat or username of the target supergroup or
   channel (in the format @channelusername)
   """
+  @doc since: "0.1.0"
   @spec get_chat_administrators(integer | binary) :: {:ok, [ChatMember.t()]} | {:error, Error.t()}
   def get_chat_administrators(chat_id) do
     request("getChatAdministrators", chat_id: chat_id)
@@ -568,6 +594,7 @@ defmodule Telegraph do
   * `chat_id` - Unique identifier for the target chat or username of the target supergroup or
   channel (in the format @channelusername)
   """
+  @doc since: "0.1.0"
   @spec get_chat_members_count(integer | binary) :: {:ok, integer} | {:error, Error.t()}
   def get_chat_members_count(chat_id) do
     request("getChatMembersCount", chat_id: chat_id)
@@ -582,6 +609,7 @@ defmodule Telegraph do
   channel (in the format @channelusername)
   * `user_id` - Unique identifier of the target user
   """
+  @doc since: "0.1.0"
   @spec get_chat_member(integer | binary, integer) :: {:ok, ChatMember.t()} | {:error, Error.t()}
   def get_chat_member(chat_id, user_id) do
     request("getChatMember", chat_id: chat_id, user_id: user_id)
@@ -602,6 +630,7 @@ defmodule Telegraph do
   * `:show_alert` - If true, an alert will be shown by the client instead of a
   notification at the top of the chat screen. Defaults to false.
   """
+  @doc since: "0.1.0"
   @spec answer_callback_query(binary, [{atom, any}]) :: :ok | {:error, Error.t()}
   def answer_callback_query(callback_query_id, options \\ []) do
     request("answerCallbackQuery", [callback_query_id: callback_query_id] ++ options)
@@ -628,6 +657,7 @@ defmodule Telegraph do
   * `:reply_markup`	- A JSON-serialized object for an inline
   keyboard - `Telegraph.Model.InlineKeyboardMarkup`
   """
+  @doc since: "0.1.0"
   @spec edit_message_text(integer | binary, integer, binary, binary, [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def edit_message_text(chat_id, message_id, inline_message_id, text, options \\ []) do
@@ -649,6 +679,7 @@ defmodule Telegraph do
   * `message_id` - Required if inline_message_id is not specified. Unique identifier of
   the sent message
   """
+  @doc since: "0.1.0"
   @spec delete_message(integer | binary, integer) :: :ok | {:error, Error.t()}
   def delete_message(chat_id, message_id) do
     request(
@@ -676,6 +707,7 @@ defmodule Telegraph do
   * `:reply_markup`	- A JSON-serialized object for an inline
   keyboard - `Telegraph.Model.InlineKeyboardMarkup`
   """
+  @doc since: "0.1.0"
   @spec edit_message_caption(integer | binary, integer, binary, [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def edit_message_caption(chat_id, message_id, inline_message_id, options \\ []) do
@@ -702,6 +734,7 @@ defmodule Telegraph do
   * `:reply_markup`	- A JSON-serialized object for an inline
   keyboard - `Telegraph.Model.InlineKeyboardMarkup`
   """
+  @doc since: "0.1.0"
   @spec edit_message_reply_markup(integer | binary, integer, binary, [{atom, any}]) ::
           {:ok, Message.t()} | {:error, Error.t()}
   def edit_message_reply_markup(chat_id, message_id, inline_message_id, options \\ []) do
@@ -735,6 +768,7 @@ defmodule Telegraph do
   * `switch_pm_parameter` - Parameter for the start message sent to the bot when user
   presses the switch button.
   """
+  @doc since: "0.1.0"
   @spec answer_inline_query(binary, [Telegraph.Model.InlineQueryResult.t()], [{atom, any}]) ::
           :ok | {:error, Error.t()}
   def answer_inline_query(inline_query_id, results, options \\ []) do
@@ -756,6 +790,7 @@ defmodule Telegraph do
   Args:
   * `name` - Name of the sticker set
   """
+  @doc since: "0.1.0"
   @spec get_sticker_set(binary) :: {:ok, Telegraph.Model.StickerSet.t()} | {:error, Error.t()}
   def get_sticker_set(name) do
     request("getStickerSet", name: name)
@@ -774,6 +809,7 @@ defmodule Telegraph do
   or a `file_path` to upload a new file from local, or a `HTTP URL` to get a file
   from the internet.
   """
+  @doc since: "0.1.0"
   @spec upload_sticker_file(integer, binary) :: {:ok, File.t()} | {:error, Error.t()}
   def upload_sticker_file(user_id, png_sticker) do
     request("uploadStickerFile", [user_id: user_id, png_sticker: png_sticker], :png_sticker)
