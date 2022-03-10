@@ -6,7 +6,16 @@ defmodule Telegraph do
   https://core.telegram.org/bots/api#available-methods
   """
 
-  alias Telegraph.Model.{User, Message, Update, UserProfilePhotos, File, Error, WebhookInfo, LabeledPrice}
+  alias Telegraph.Model.{
+    User,
+    Message,
+    Update,
+    UserProfilePhotos,
+    File,
+    Error,
+    WebhookInfo,
+    LabeledPrice
+  }
 
   import Telegraph.API
 
@@ -940,7 +949,7 @@ defmodule Telegraph do
     request("unpinChatMessage", chat_id: chat_id)
   end
 
-   @doc """
+  @doc """
   Use this method to send invoices. On success, the sent Message is returned.
   Args:
   * `chat_id` - Unique identifier for the target chat or username of the target
@@ -977,10 +986,31 @@ defmodule Telegraph do
   * `reply_markup` - A JSON-serialized object for an inline keyboard - `Telegraph.Model.InlineKeyboardMarkup`
   """
   @doc since: "0.8.0"
-  @spec send_invoice(integer | binary, binary, binary, binary, binary, binary, binary, [LabeledPrice.t()], [{atom, any}]) ::
+  @spec send_invoice(
+          integer | binary,
+          binary,
+          binary,
+          binary,
+          binary,
+          binary,
+          binary,
+          [LabeledPrice.t()],
+          [{atom, any}]
+        ) ::
           {:ok, Message.t()} | {:error, Error.t()}
-  def send_invoice(chat_id, title, description, payload, provider_token, start_parameter, currency, prices, options \\ []) do
-    request("sendInvoice",
+  def send_invoice(
+        chat_id,
+        title,
+        description,
+        payload,
+        provider_token,
+        start_parameter,
+        currency,
+        prices,
+        options \\ []
+      ) do
+    request(
+      "sendInvoice",
       [
         chat_id: chat_id,
         title: title,
@@ -989,7 +1019,7 @@ defmodule Telegraph do
         provider_token: provider_token,
         start_parameter: start_parameter,
         currency: currency,
-        prices: prices,
+        prices: prices
       ] ++ options
     )
   end
@@ -1009,7 +1039,8 @@ defmodule Telegraph do
   unavailable'). Telegram will display this message to the user.
   """
   @doc since: "0.8.0"
-  @spec answer_shipping_query(integer | binary, boolean, [{atom, any}]) :: :ok | {:error, Error.t()}
+  @spec answer_shipping_query(integer | binary, boolean, [{atom, any}]) ::
+          :ok | {:error, Error.t()}
   def answer_shipping_query(shipping_query_id, ok, options \\ []) do
     request("answerShippingQuery", [shipping_query_id: shipping_query_id, ok: ok] ++ options)
   end
@@ -1030,9 +1061,12 @@ defmodule Telegraph do
   a different color or garment!"). Telegram will display this message to the user.
   """
   @doc since: "0.8.0"
-  @spec answer_pre_checkout_query(integer | binary, boolean, [{atom, any}]) :: :ok | {:error, Error.t()}
+  @spec answer_pre_checkout_query(integer | binary, boolean, [{atom, any}]) ::
+          :ok | {:error, Error.t()}
   def answer_pre_checkout_query(pre_checkout_query_id, ok, options \\ []) do
-    request("answerPreCheckoutQuery",
-      [pre_checkout_query_id: pre_checkout_query_id, ok: ok] ++ options)
+    request(
+      "answerPreCheckoutQuery",
+      [pre_checkout_query_id: pre_checkout_query_id, ok: ok] ++ options
+    )
   end
 end

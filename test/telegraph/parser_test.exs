@@ -22,7 +22,12 @@ defmodule Telegraph.ParserTest do
         "getMe"
       )
 
-    assert me == %User{id: 666, first_name: "Telegraph", last_name: nil, username: "telegraph_bot"}
+    assert me == %User{
+             id: 666,
+             first_name: "Telegraph",
+             last_name: nil,
+             username: "telegraph_bot"
+           }
   end
 
   test "parse result of get_user_profile_photos" do
@@ -125,7 +130,11 @@ defmodule Telegraph.ParserTest do
                    photo: %Telegraph.Model.ChatPhoto{small_file_id: "sid", big_file_id: "bid"}
                  },
                  date: 1_508_359_228,
-                 from: %Telegraph.Model.User{first_name: "John", id: 440_000_000, last_name: "Doe"},
+                 from: %Telegraph.Model.User{
+                   first_name: "John",
+                   id: 440_000_000,
+                   last_name: "Doe"
+                 },
                  message_id: 3,
                  text: "Test"
                },
